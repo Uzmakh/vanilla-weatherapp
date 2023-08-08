@@ -13,10 +13,10 @@ function formatDate(timestamp) {
     let day = days[date.getDay()];
 
     return `${day} ${hours}:${minutes}`;
-
 }
 
 function displayTemperature(response) {
+    // we do console log to check whether our code is working
     // console.log(response);
     // console.log(response.data.name);
     // console.log(response.data.main.temp);
