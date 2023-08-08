@@ -41,6 +41,7 @@ li {
     font-weight: 100;
     color: #878787;
     line-height: 19px;
+    text-transform: capitalize;
 }
 
 .temperature {
@@ -58,7 +59,7 @@ a {
 }
 
 strong {
-    font-size: 64px;
+    font-size: 60px;
     font-weight: 400;
     color: rgb(33, 33, 33);
     line-height: 1;
@@ -68,6 +69,6 @@ strong {
     font-size: 20px;
     position: relative;
     bottom: 2rem;
-    right: 1.2rem;
+    right: 0.5rem;
     /* top: -35px; */
 }

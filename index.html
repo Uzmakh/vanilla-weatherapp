@@ -16,15 +16,17 @@
 <body>
   <div class="container">
     <div class="weather-app">
-      <h1>New York</h1>
+      <h1 id="city"></h1>
       <ul>
         <li>Friday 05:00</li>
-        <li>Clear</li>
+        <li id="description"></li>
       </ul>
       <div class="row">
+
         <div class="col-6 temperature">
           <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear">
-          <strong> 12 </strong>
+        
+          <strong id="temperature"> </strong>
 
           <span class="units">
             <sup> °C | </sup>
@@ -32,14 +34,16 @@
                 °F</a> </sup>
           </span>
 
-
-        </div>
+  </div>
         <!-- /col-6 -->
+
+
         <div class="col-6">
           <ul>
             <li>Precipitation: 0%</li>
-            <li>Humidity: 20%</li>
-            <li>Wind: 2 km/h</li>
+            <li i>Humidity: <span id="humidity" ></span>%</li>
+            <li >Wind: <span id="wind"></span>
+               km/h</li>
           </ul>
         </div>
         <!--    /col-6  -->
