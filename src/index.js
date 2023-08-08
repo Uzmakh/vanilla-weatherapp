@@ -17,7 +17,7 @@ function formatDate(timestamp) {
 
 function displayTemperature(response) {
     // we do console log to check whether our code is working
-    // console.log(response);
+    console.log(response);
     // console.log(response.data.name);
     // console.log(response.data.main.temp);
     // console.log(response.data.weather[0].main);
@@ -30,6 +30,7 @@ function displayTemperature(response) {
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
+    let iconElement = document.querySelector("#icon");
 
     cityElement.innerHTML = response.data.name;
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -37,9 +38,12 @@ function displayTemperature(response) {
     humidityElement.innerHTML = response.data.main.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
+    iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png `);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "8caba765ef85607a7196e7645c5e36e8";
-let apiUrl = ` https://api.openweathermap.org/data/2.5/weather?q=Dubai&appid=${apiKey}&units=metric`;
+let city = "Murree";
+let apiUrl = ` https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 // console.log(apiUrl);
 axios.get(apiUrl).then(displayTemperature);
