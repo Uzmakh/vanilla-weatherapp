@@ -41,6 +41,9 @@ li {
     font-weight: 100;
     color: #878787;
     line-height: 19px;
+
+}
+li::first-letter{
     text-transform: capitalize;
 }
 
