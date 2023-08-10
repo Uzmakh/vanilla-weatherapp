@@ -3,6 +3,7 @@ body {
 }
 
 .container {
+    border: 1px solid red;
     max-width: 600px;
     margin: 50px auto;
 }
@@ -48,6 +49,7 @@ li::first-letter{
 }
 
 .temperature {
+    /* border: 1px solid red; */
     margin-top: 2rem;
 }
 
@@ -74,4 +76,12 @@ strong {
     bottom: 2rem;
     right: 0.5rem;
     /* top: -35px; */
+}
+/* .col-6{
+    border: 2px solid  green;
+} */
+.active{
+    color: black;
+    cursor: default;
+    font-weight: 600;
 }
