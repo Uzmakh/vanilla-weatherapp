@@ -75,3 +75,8 @@ strong {
     right: 0.5rem;
     /* top: -35px; */
 }
+.temperature .active{
+    color: rgb(33, 33, 33);
+    cursor: default;
+    font-weight: 600;
+}
