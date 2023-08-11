@@ -16,7 +16,7 @@ function formatDate(timestamp) {
 }
 
 function displayTemperature(response) {
-    // we do console log to check whether our code is working
+    // we do console log to check whether or no our code is working
     console.log(response);
     // console.log(response.data.name);
     // console.log(response.data.main.temp);
@@ -61,12 +61,12 @@ function handleSubmit(event) {
 
 function displayFahrenheitTemperature(event) {
     event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature");
 
     // remove the active class  from celsius link
     celsiusLink.classList.remove("active");
     fahrenheitLink.classList.add("active");
 
+    let temperatureElement = document.querySelector("#temperature");
     let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
     temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
