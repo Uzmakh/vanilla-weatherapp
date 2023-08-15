@@ -15,9 +15,34 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+    let forecastHTML = `<div class="row">`;
+    let days = ["Thu", "Fri", "Sat", "Mon"];
+
+    days.forEach(function (day) {
+        forecastHTML = forecastHTML + ` 
+          <div class="col-2">
+            <div class="forecast-day">
+                 ${day}
+            </div>
+            <img src="#" alt="">
+            <div class="forecast-temperatures">
+              <span class="max"> 18° </span>
+              <span class="min"> 12° </span>
+            </div>
+          </div>
+          <!-- /col-2 --> `;
+    });
+
+    forecastHTML = forecastHTML + `</div >`;
+    forecastElement.innerHTML = forecastHTML;
+    // console.log(forecastHTML);
+}
+
 function displayTemperature(response) {
     // we do console log to check whether or no our code is working
-    console.log(response);
+    // console.log(response);
     // console.log(response.data.name);
     // console.log(response.data.main.temp);
     // console.log(response.data.weather[0].main);
@@ -94,5 +119,5 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("Multan");
-
+displayForecast();
 
