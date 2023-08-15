@@ -15,7 +15,8 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+    console.log(response.data);
     let forecastElement = document.querySelector("#forecast");
     let forecastHTML = `<div class="row">`;
     let days = ["Thu", "Fri", "Sat", "Mon"];
@@ -26,7 +27,7 @@ function displayForecast() {
             <div class="forecast-day">
                  ${day}
             </div>
-            <img src="#" alt="">
+            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="">
             <div class="forecast-temperatures">
               <span class="max"> 18° </span>
               <span class="min"> 12° </span>
@@ -40,9 +41,17 @@ function displayForecast() {
     // console.log(forecastHTML);
 }
 
+function getForecast(coordinates) {
+    console.log(coordinates);
+    let apiKey = "8caba765ef85607a7196e7645c5e36e8";
+    let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid={apiKey}&units=metric`;
+    console.log(apiUrl);
+    axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
     // we do console log to check whether or no our code is working
-    // console.log(response);
+    console.log(response);
     // console.log(response.data.name);
     // console.log(response.data.main.temp);
     // console.log(response.data.weather[0].main);
@@ -67,6 +76,8 @@ function displayTemperature(response) {
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png `);
     iconElement.setAttribute("alt", response.data.weather[0].description);
+
+    getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -119,5 +130,5 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("Multan");
-displayForecast();
+
 
