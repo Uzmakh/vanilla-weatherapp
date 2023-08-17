@@ -68,7 +68,7 @@ strong {
     line-height: 1;
 }
 
-.units {
+.unit{
     font-size: 20px;
     position: relative;
     bottom: 2rem;
@@ -76,11 +76,7 @@ strong {
     /* top: -35px; */
 }
 
-.active {
-    color: black;
-    cursor: default;
-    font-weight: 600;
-}
+
 
 /* Weather-Forecast */
 .weather-forecast {
